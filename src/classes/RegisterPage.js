@@ -3,6 +3,7 @@ import "./pages.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../FirebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 
 function RegisterPage() {
@@ -11,6 +12,7 @@ function RegisterPage() {
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+   const navigate=useNavigate()
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
@@ -47,6 +49,7 @@ function RegisterPage() {
         setPassword("");
         setPhone("");
         console.log("success")
+        navigate('/home');
         alert("success")
       })
       .catch((error) => {
