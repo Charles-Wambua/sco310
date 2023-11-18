@@ -190,7 +190,7 @@ const navigate=useNavigate()
                 color: "white",
               }}
             >
-              Register
+              Login
             </p>
           )}
         </button>
